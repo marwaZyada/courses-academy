@@ -1,59 +1,174 @@
-# CoursesAcademy
+# 🎓 Courses Academy
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.17.
+## 📌 Project Description
 
-## Development server
+Courses Academy is a modern Angular application for managing online courses. It allows users to browse, search, add, edit, view, and delete courses through a clean and responsive user interface. The project follows a scalable architecture with reusable components and Angular best practices.
 
-To start a local development server, run:
+---
+
+## 🛠️ Technologies Used
+
+- Angular 21
+- TypeScript
+- Angular Material
+- Bootstrap 5
+- RxJS
+- Angular Router
+- Angular Signals
+- Angular Reactive Forms
+- Angular In-Memory Web API (Mock Backend)
+- ngx-toastr
+- SCSS
+
+---
+
+## ✨ Features Implemented
+
+### Course Management
+
+- Display all courses
+- View course details
+- Add a new course
+- Edit existing courses
+- Delete courses
+- Search courses by title
+- Responsive course cards
+
+### Shared Components
+
+- Reusable search input component
+- Reusable page header component
+- Reusable Table
+- reusable dropdownlist
+- Confirmation dialog
+- Loading indicator
+- Empty state component
+- Error interceptor
+
+
+### UI Features
+
+- Angular Material Design
+- Responsive layout
+- Toast notifications
+- Form validation
+- loading
+
+---
+
+## ▶️ How to Run the Project
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+### 2. Navigate to the project
+
+```bash
+cd courses-academy
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Run the application
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open your browser at:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+## 🗄️ Mock API / Local Storage
+
+This project uses **Angular In-Memory Web API** to simulate a backend server.
+
+### Mock API Features
+
+- GET courses
+- GET course by id
+- POST new course
+- PUT update course
+- DELETE course
+
+The mock data is stored inside:
+
+```
+src/app/core/mock/in-memory-data.service.ts
 ```
 
-## Building
+No real backend or database is required.
 
-To build the project run:
+---
 
-```bash
-ng build
+## 📂 Project Structure
+
+```
+src/
+│
+├── app/
+│   ├── core/
+│   ├── shared/
+│   ├── features/
+│   │      └── course/
+│   ├── layout/
+│   └── app.routes.ts
+│
+├── assets/
+└── styles.scss
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 📝 Assumptions
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+- The application is intended for demonstration purposes.
+- Authentication and authorization are not implemented.
+- Data persistence is temporary because the mock API resets when the application reloads.
+- Images are loaded from static URLs.
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## ⭐ Bonus Features
 
-For end-to-end (e2e) testing, run:
+- Reusable shared components
+- Standalone Angular Components
+- Angular Signals
+- Responsive design
+- Toast notifications
+- Confirmation dialog before deleting
+- Search functionality
+- Clean folder structure
+- Angular Material UI
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📷 Screenshots
 
-## Additional Resources
+You can add screenshots of:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Home Page
+- Course Details
+- Add Course
+- Edit Course
+- Delete Confirmation
+- Search Results
+
+---
+
+## 👩‍💻 Author
+
+**Marwa Sharaf Ali**
+
+Angular Developer
