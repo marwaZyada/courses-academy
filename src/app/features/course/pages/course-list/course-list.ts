@@ -11,9 +11,10 @@ import { CourseForm } from '../course-form/course-form';
 import { NotificationService } from '@core/services/notification/notification.service';
 import { CourseDetails } from '../course-details/course-details';
 import { Router } from '@angular/router';
+import { SearchDropdownlist } from '@shared/components/search-dropdownlist/search-dropdownlist';
 @Component({
   selector: 'app-course-list',
-  imports: [PageHeader, SearchInput, DataTable, EmptyState],
+  imports: [PageHeader, SearchInput, DataTable, EmptyState,SearchDropdownlist],
   templateUrl: './course-list.html',
   styleUrl: './course-list.css',
 })
@@ -26,6 +27,12 @@ export class CourseList implements OnInit {
     'duration',
     'price',
     'status',
+  ];
+  statusOptions = [
+    {label: 'All', value: null},
+    { label: 'Active', value:'Active'  },
+    { label: 'Draft', value:'Draft' },
+    { label: 'Archived', value: 'Archived' },
   ];
   courses = signal<Course[]>([]);
 
@@ -71,6 +78,22 @@ private router = inject(Router);
       const filteredCourses = response.data.filter((course) =>
         course.courseName.toLowerCase().includes(searchTerm.toLowerCase())
       );
+      this.courses.set(filteredCourses);
+    });
+  }
+
+  applystatusFilter($event: any) {
+    const selectedStatus = $event;
+    console.log('Selected status:', selectedStatus);
+    this.courseService.getAll().subscribe((response) => {
+      let filteredCourses: Course[];
+      if (selectedStatus === null) {
+        filteredCourses = response.data; // Show all courses
+      } else {
+        filteredCourses = response.data.filter(
+          (course) => course.status === selectedStatus
+        );
+      }
       this.courses.set(filteredCourses);
     });
   }
@@ -129,5 +152,6 @@ private router = inject(Router);
 );
 
   }
+
 
 }
