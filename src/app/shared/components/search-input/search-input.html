@@ -8,7 +8,7 @@
 
   <input class="p-2"
     matInput
-    (keyup)="onSearch($event)"
+    (change)="search.emit($event.target.value)"
     [placeholder]=placeholder()>
 
   <mat-icon matSuffix>

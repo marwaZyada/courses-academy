@@ -67,6 +67,12 @@ private router = inject(Router);
   }
   applyFilter(searchTerm: string) {
     console.log('Search term:', searchTerm);
+    this.courseService.getAll().subscribe((response) => {
+      const filteredCourses = response.data.filter((course) =>
+        course.courseName.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      this.courses.set(filteredCourses);
+    });
   }
 
   editCourse(courseId: number) {

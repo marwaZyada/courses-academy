@@ -13,9 +13,9 @@ export class SearchInput {
 label = input.required<string>();
 placeholder = input.required<string>();
 search = output<string>();
-onSearch(event: Event) {
-  const value = (event.target as HTMLInputElement).value;
-  this.search.emit(value);
-}
+// onSearch(event: Event) {
+//   const value = (event.target as HTMLInputElement).value;
+//   this.search.emit(value);
+// }
 
 }
